@@ -1,7 +1,13 @@
 import '@/globals.css';
+import { Header } from './components/Header';
 
 function App() {
-  return <>Sorteador de Amigo Secreto</>;
+  return (
+    <>
+      <Header />
+      {/* Sorteador de Amigo Secreto */}
+    </>
+  );
 }
 
 export default App;
