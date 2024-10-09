@@ -5,14 +5,20 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "strict": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
   },
   "include": [
-    "src/**/*"
-, "setupTests.ts"  ],
+    "src/**/*",
+    "setupTests.ts"
+  ],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
+    "node_modules"
   ]
 }
