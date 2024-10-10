@@ -1,12 +1,21 @@
 import { useRecoilState } from 'recoil';
-import { attendeesList } from '@/store/atendees';
+import { attendeesList, errorState } from '@/store/atendees';
 
 export const useAttendees = () => {
   const [attendees, setAttendees] = useRecoilState(attendeesList);
+  const [error, setError] = useRecoilState(errorState);
 
   const addAttendee = (name: string) => {
+    if (attendees.includes(name)) {
+      setError('Nomes duplicados não são permitidos!');
+      return;
+    }
     setAttendees((attendees) => [...attendees, name]);
   };
 
-  return { attendees, addAttendee };
+  const updateError = (newError: string) => {
+    setError(newError);
+  };
+
+  return { error, attendees, addAttendee, updateError };
 };

@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 export const Form = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState('');
-  const { addAttendee } = useAttendees();
+  const { addAttendee, error } = useAttendees();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,6 +25,7 @@ export const Form = () => {
       <button type="submit" disabled={!name}>
         Adicionar
       </button>
+      {error && <p role="alert">{error}</p>}
     </form>
   );
 };
