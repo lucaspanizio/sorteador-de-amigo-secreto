@@ -1,12 +1,12 @@
-import '@/globals.css';
-import { Header } from './components/Header';
+import { RecoilRoot } from 'recoil';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '@/pages/routes';
 
 function App() {
   return (
-    <>
-      <Header />
-      {/* Sorteador de Amigo Secreto */}
-    </>
+    <RecoilRoot>
+      <RouterProvider router={router} />
+    </RecoilRoot>
   );
 }
 
