@@ -8,6 +8,7 @@ export const useAttendees = () => {
   const addAttendee = (name: string) => {
     if (attendees.includes(name)) {
       setError('Nomes duplicados não são permitidos!');
+      setTimeout(() => setError(''), 2000);
       return;
     }
     setAttendees((attendees) => [...attendees, name]);

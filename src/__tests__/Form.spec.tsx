@@ -1,70 +1,67 @@
 import { RecoilRoot } from 'recoil';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { Form } from '@/components/Form';
 
-const renderComponent = () => {
-  render(
-    <RecoilRoot>
-      <Form />
-    </RecoilRoot>,
+const getElements = () => {
+  const input = screen.getByPlaceholderText(
+    'Insira os nomes dos participantes',
   );
+  const button = screen.getByRole('button');
+  return { input, button };
 };
 
-const addNameInInputAndClickOnButton = (
-  input: HTMLElement,
-  button: HTMLElement,
-) => {
-  fireEvent.change(input, {
-    target: {
-      value: 'Ana Catarina',
-    },
-  });
+const addNameInInputAndClickOnButton = ({ times = 1 }: { times?: number }) => {
+  const { input, button } = getElements();
 
-  fireEvent.click(button);
+  for (let i = 0; i < times; i++) {
+    fireEvent.change(input, { target: { value: 'Ana Catarina' } });
+    fireEvent.click(button);
+  }
 };
 
 describe('Form', () => {
-  it('Should not add a name to the list if the input is empty', () => {
-    renderComponent();
-
-    const input = screen.getByPlaceholderText(
-      'Insira os nomes dos participantes',
+  beforeEach(() => {
+    render(
+      <RecoilRoot>
+        <Form />
+      </RecoilRoot>,
     );
+  });
 
-    const button = screen.getByRole('button');
+  jest.useFakeTimers();
 
+  it('Should not add a name to the list if the input is empty', () => {
+    const { input, button } = getElements();
     expect(input).toBeInTheDocument();
     expect(button).toBeDisabled();
   });
 
   it('Should add a name to the list if the input is filled', () => {
-    renderComponent();
+    addNameInInputAndClickOnButton({});
 
-    const button = screen.getByRole('button');
-    const input = screen.getByPlaceholderText(
-      'Insira os nomes dos participantes',
-    );
-
-    addNameInInputAndClickOnButton(input, button);
-
+    const { input } = getElements();
     expect(input).toHaveFocus();
     expect(input).toHaveValue('');
   });
 
   it('Should not add duplicate names to the list', () => {
-    renderComponent();
-
-    const button = screen.getByRole('button');
-    const input = screen.getByPlaceholderText(
-      'Insira os nomes dos participantes',
-    );
-
-    addNameInInputAndClickOnButton(input, button);
-    addNameInInputAndClickOnButton(input, button);
+    addNameInInputAndClickOnButton({ times: 2 });
 
     const errorMessage = screen.getByRole('alert');
     expect(errorMessage.textContent).toBe(
       'Nomes duplicados não são permitidos!',
     );
+  });
+
+  it('The error message should disappear after 2 seconds', () => {
+    addNameInInputAndClickOnButton({ times: 2 });
+
+    let errorMessage = screen.queryByRole('alert');
+    expect(errorMessage).toBeInTheDocument();
+
+    act(() => jest.advanceTimersByTime(2000));
+
+    errorMessage = screen.queryByRole('alert');
+    expect(errorMessage).toBeNull();
   });
 });
