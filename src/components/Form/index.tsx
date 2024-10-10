@@ -1,5 +1,6 @@
-import { useAttendees } from '@/hooks/useAttendees';
 import { useRef, useState } from 'react';
+import { useAttendees } from '@/hooks/useAttendees';
+import * as S from './styles';
 
 export const Form = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -15,17 +16,18 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <S.Input
         ref={inputRef}
         type="text"
         value={name}
         placeholder="Insira os nomes dos participantes"
         onChange={(e) => setName(e.target.value)}
       />
-      <button type="submit" disabled={!name}>
+      <S.Button type="submit" disabled={!name}>
         Adicionar
-      </button>
-      {error && <p role="alert">{error}</p>}
+      </S.Button>
+
+      {error && <S.Alert role="alert">{error}</S.Alert>}
     </form>
   );
 };
