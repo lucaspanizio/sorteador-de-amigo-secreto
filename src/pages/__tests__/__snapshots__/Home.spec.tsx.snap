@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Shoud be render 1`] = `
+<div>
+  <section>
+    <h2>
+      Vamos começar!
+    </h2>
+    <form>
+      <input
+        class="sc-blHHSb jBMeZG"
+        placeholder="Insira os nomes dos participantes"
+        type="text"
+        value=""
+      />
+      <button
+        class="sc-gtLWhw kthIhm"
+        disabled=""
+        type="submit"
+      >
+        Adicionar
+      </button>
+    </form>
+    <ul />
+    <footer
+      class="sc-dntaoT doFTcL"
+    >
+      <button
+        class="sc-fAUdSK jodoHX"
+        disabled=""
+      >
+        Iniciar brincadeira!
+      </button>
+      <img
+        alt="Sacolas de compras"
+        src="/images/sacolas.png"
+      />
+    </footer>
+  </section>
+</div>
+`;
