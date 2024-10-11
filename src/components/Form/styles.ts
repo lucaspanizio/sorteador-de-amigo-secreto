@@ -9,6 +9,7 @@ export const Input = styled.input`
   padding-left: 32px;
   font-size: 20px;
   border: 2px solid black;
+  margin-bottom: 1rem;
   box-shadow: 0px 2px 0px 1px #000000;
 
   &:focus {
