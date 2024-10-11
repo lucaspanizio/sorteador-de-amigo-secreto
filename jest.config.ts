@@ -10,10 +10,6 @@ const config: Config = {
     '^@/(.*)$': '<rootDir>/src/$1', // Alias path
   },
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
-  testMatch: [
-    '**/__tests__/**/*.test.(ts|tsx)',
-    '**/?(*.)+(spec|test).(ts|tsx)',
-  ],
 };
 
 export default config;

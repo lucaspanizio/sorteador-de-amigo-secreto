@@ -1,7 +1,7 @@
 import { RecoilRoot } from 'recoil';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Footer } from '@/components/Footer';
 import { useAttendees } from '@/hooks/useAttendees';
+import { Button } from '@/components/Button';
 
 jest.mock('@/hooks/useAttendees', () => {
   return {
@@ -20,12 +20,12 @@ jest.mock('react-router-dom', () => {
 const renderComponent = () => {
   render(
     <RecoilRoot>
-      <Footer />
+      <Button />
     </RecoilRoot>,
   );
 };
 
-describe('Footer', () => {
+describe('Button', () => {
   describe('When there are not enough participants', () => {
     it('the game should not start', () => {
       (useAttendees as jest.Mock).mockReturnValue({ attendees: [] });
@@ -56,7 +56,7 @@ describe('Footer', () => {
       fireEvent.click(button);
 
       expect(mockNavigation).toHaveBeenCalledTimes(1);
-      expect(mockNavigation).toHaveBeenCalledWith('/draw');
+      expect(mockNavigation).toHaveBeenCalledWith('/sorteio');
     });
   });
 });
