@@ -3,7 +3,7 @@ import { AttendeesList } from '@/components/AttendeesList';
 import { Button } from '@/components/Button';
 import * as S from './styles';
 
-export const Home: React.FC = () => {
+export const Inicial: React.FC = () => {
   return (
     <section>
       <h2>Vamos começar!</h2>
