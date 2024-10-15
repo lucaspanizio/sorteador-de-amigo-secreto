@@ -1,24 +1,32 @@
 import styled from 'styled-components';
 
+export const Form = styled.form`
+  width: 100%;
+`;
+
 export const Input = styled.input`
   border-top-left-radius: 45px;
   border-bottom-left-radius: 45px;
   height: 82px;
   width: 70%;
   box-sizing: border-box;
-  padding-left: 32px;
   font-size: 20px;
   border: 2px solid black;
   margin-bottom: 1rem;
   box-shadow: 0px 2px 0px 1px #000000;
+
+  padding-left: 80px;
+  background-image: url('/images/adicionar-participante.png');
+  background-size: 30px 24px;
+  background-repeat: no-repeat;
+  background-position: 36px center;
 
   &:focus {
     outline: none;
   }
 
   @media screen and (max-width: 800px) {
-    display: block;
-    width: 100%;
+    width: 90%;
     border-radius: 45px;
     box-shadow: 0px 2px 0px 1px #000000;
     margin-bottom: 18px;

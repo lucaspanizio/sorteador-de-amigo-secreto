@@ -1,32 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Shoud be render 1`] = `
+exports[`Page: Initial When render page should be exactly like the snapshot 1`] = `
 <div>
   <section>
-    <h2>
+    <h1>
       Vamos começar!
-    </h2>
-    <form>
+    </h1>
+    <form
+      class="sc-blHHSb opeqX"
+    >
       <input
-        class="sc-blHHSb jBMeZG"
+        class="sc-gtLWhw ggfSGj"
         placeholder="Insira os nomes dos participantes"
         type="text"
         value=""
       />
       <button
-        class="sc-gtLWhw kthIhm"
+        class="sc-egkSDF iDlEkV"
         disabled=""
         type="submit"
       >
         Adicionar
       </button>
     </form>
-    <ul />
     <footer
-      class="sc-dntaoT doFTcL"
+      class="sc-ixGGxD gZDtne"
     >
       <button
-        class="sc-fAUdSK jodoHX"
+        class="sc-kLhKbu fGqRoi"
+        data-testid="btnIniciar"
         disabled=""
       >
         Iniciar brincadeira!
@@ -34,6 +36,7 @@ exports[`Home Shoud be render 1`] = `
       <img
         alt="Sacolas de compras"
         src="/images/sacolas.png"
+        width="150px"
       />
     </footer>
   </section>

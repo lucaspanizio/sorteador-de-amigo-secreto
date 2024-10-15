@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   width: 350px;
   height: 80px;
   font-size: 20px;
@@ -9,6 +13,12 @@ export const Button = styled.button`
   background-color: #fe652b;
   color: #fff;
   cursor: pointer;
+
+  padding-left: 60px;
+  background-image: url('/images/play.png');
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: 24px center;
 
   &:disabled {
     opacity: 0.6;
@@ -23,4 +33,10 @@ export const Button = styled.button`
     width: 220px;
     margin: 32px 0;
   }
+`;
+
+export const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;

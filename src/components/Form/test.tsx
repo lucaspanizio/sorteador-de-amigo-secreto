@@ -19,7 +19,7 @@ const addNameInInputAndClickOnButton = ({ times = 1 }: { times?: number }) => {
   }
 };
 
-describe('Form', () => {
+describe('Component: Form', () => {
   beforeEach(() => {
     render(
       <RecoilRoot>
@@ -30,13 +30,13 @@ describe('Form', () => {
 
   jest.useFakeTimers();
 
-  it('Should not add a name to the list if the input is empty', () => {
+  it('should not add a name to the list if the input is empty', () => {
     const { input, button } = getElements();
     expect(input).toBeInTheDocument();
     expect(button).toBeDisabled();
   });
 
-  it('Should add a name to the list if the input is filled', () => {
+  it('should add a name to the list if the input is filled', () => {
     addNameInInputAndClickOnButton({});
 
     const { input } = getElements();
@@ -44,7 +44,7 @@ describe('Form', () => {
     expect(input).toHaveValue('');
   });
 
-  it('Should not add duplicate names to the list', () => {
+  it('should not add duplicate names to the list', () => {
     addNameInInputAndClickOnButton({ times: 2 });
 
     const errorMessage = screen.getByRole('alert');
@@ -53,7 +53,7 @@ describe('Form', () => {
     );
   });
 
-  it('The error message should disappear after 2 seconds', () => {
+  it('the error message should disappear after 2 seconds', () => {
     addNameInInputAndClickOnButton({ times: 2 });
 
     let errorMessage = screen.queryByRole('alert');
@@ -61,7 +61,6 @@ describe('Form', () => {
 
     act(() => jest.advanceTimersByTime(2000));
 
-    errorMessage = screen.queryByRole('alert');
-    expect(errorMessage).toBeNull();
+    expect(screen.queryByRole('alert')).toBeNull();
   });
 });

@@ -10,6 +10,5 @@ export const Container = styled.main`
   box-sizing: border-box;
   border: 2px solid #000000;
   border-radius: 64px 64px 0px 0px;
-  padding: 80px;
   margin-top: -32px;
 `;

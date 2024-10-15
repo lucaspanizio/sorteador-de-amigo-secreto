@@ -1,11 +1,13 @@
 import { useRef, useState } from 'react';
 import { useAttendees } from '@/hooks/useAttendees';
+import { useError } from '@/hooks/useError';
 import * as S from './styles';
 
 export const Form = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState('');
-  const { addAttendee, error } = useAttendees();
+  const { addAttendee } = useAttendees();
+  const { error } = useError();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -15,7 +17,7 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <S.Form onSubmit={handleSubmit}>
       <S.Input
         ref={inputRef}
         type="text"
@@ -28,6 +30,6 @@ export const Form = () => {
       </S.Button>
 
       {error && <S.Alert role="alert">{error}</S.Alert>}
-    </form>
+    </S.Form>
   );
 };

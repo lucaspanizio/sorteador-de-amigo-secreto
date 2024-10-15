@@ -6,7 +6,8 @@
   "author": "José Lucas Panizio",
   "scripts": {
     "dev": "vite",
-    "test": "jest --watchAll",
+    "test": "jest --verbose",
+    "test:update": "jest --verbose --updateSnapshot",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },

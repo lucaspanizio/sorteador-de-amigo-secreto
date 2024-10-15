@@ -17,17 +17,17 @@ jest.mock('@/hooks/useAttendees', () => {
   };
 });
 
-describe('AttendeesList', () => {
-  it('Should be render a empty list', () => {
+describe('Component: AttendeesList', () => {
+  it('Should not be rendered a empty list', () => {
     (useAttendees as jest.Mock).mockReturnValue({ attendees: [] });
 
     renderComponent();
 
-    const items = screen.queryAllByRole('listitem');
-    expect(items).toHaveLength(0);
+    const list = screen.queryByRole('listitem');
+    expect(list).toBeNull();
   });
 
-  it('Should be render a filled list', () => {
+  it('should be render a filled list', () => {
     (useAttendees as jest.Mock).mockReturnValue({
       attendees: ['Ana', 'João', 'Pedro'],
     });
