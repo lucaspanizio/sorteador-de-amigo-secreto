@@ -11,7 +11,7 @@ export const Select = styled.select`
 
   border-radius: 45px;
   height: 82px;
-  width: 70%;
+  width: 100%;
   box-sizing: border-box;
   padding: 0 32px;
   font-size: 20px;
@@ -52,7 +52,7 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 800px) {
-    width: 220px;
+    width: 240px;
     margin: 32px 0;
   }
 `;
@@ -70,7 +70,6 @@ export const SecretSanta = styled.p`
 
 export const Footer = styled.footer`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 8rem;
 `;
