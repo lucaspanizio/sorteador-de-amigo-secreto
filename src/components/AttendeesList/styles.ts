@@ -16,9 +16,15 @@ export const Wrapper = styled.div`
 
   p {
     align-self: center;
-    padding-left: 2.5rem;
+    padding-left: 1.5rem;
     font-size: 18px;
     color: #c6c6c6;
+  }
+
+  @media screen and (min-width: 800px) {
+    p {
+      padding-left: 2rem;
+    }
   }
 `;
 

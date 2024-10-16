@@ -7,29 +7,30 @@ export const Form = styled.form`
 export const Input = styled.input`
   border-top-left-radius: 45px;
   border-bottom-left-radius: 45px;
-  padding-right: 2rem;
   height: 82px;
   width: 80%;
   box-sizing: border-box;
   font-size: 20px;
   border: 2px solid black;
-  margin-bottom: 1rem;
   box-shadow: 0px 2px 0px 1px #000000;
 
   caret-color: #fe652b;
-
-  padding-left: 80px;
-  background-image: url('/images/adicionar-participante.png');
-  background-size: 30px 24px;
-  background-repeat: no-repeat;
-  background-position: 36px center;
+  padding-left: 26px;
 
   &:focus {
     outline: none;
   }
 
+  @media screen and (min-width: 800px) {
+    padding-left: 80px;
+    background-image: url('/images/adicionar-participante.png');
+    background-size: 30px 24px;
+    background-repeat: no-repeat;
+    background-position: 32px center;
+  }
+
   @media screen and (max-width: 800px) {
-    width: 70%;
+    width: 80%;
   }
 `;
 
@@ -41,10 +42,11 @@ export const Button = styled.button`
   box-sizing: border-box;
   border: 2px solid black;
   font-size: 20px;
-  color: #000000;
-  box-shadow: 2px 2px 0px 1px #000000;
   cursor: pointer;
+
+  color: #000000;
   background-color: #c4c4c4;
+  box-shadow: 2px 2px 0px 1px #000000;
 
   &:hover {
     opacity: 0.8;
@@ -56,7 +58,12 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 800px) {
-    width: 30%;
+    width: 20%;
+    color: transparent;
+    background-image: url('/images/adicionar-participante.png');
+    background-size: 30px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 `;
 
