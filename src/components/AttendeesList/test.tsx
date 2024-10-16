@@ -18,7 +18,16 @@ jest.mock('@/hooks/useAttendees', () => {
 });
 
 describe('Component: AttendeesList', () => {
-  it('Should not be rendered a empty list', () => {
+  it('should render a message when there are no attendees', () => {
+    (useAttendees as jest.Mock).mockReturnValue({ attendees: [] });
+
+    renderComponent();
+
+    const message = screen.getByText('Nenhum participante adicionado ...');
+    expect(message).toBeInTheDocument();
+  });
+
+  it('should not render an empty list', () => {
     (useAttendees as jest.Mock).mockReturnValue({ attendees: [] });
 
     renderComponent();

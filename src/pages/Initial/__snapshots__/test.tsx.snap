@@ -10,24 +10,31 @@ exports[`Page: Initial When render page should be exactly like the snapshot 1`] 
       class="sc-blHHSb opeqX"
     >
       <input
-        class="sc-gtLWhw ggfSGj"
+        class="sc-gtLWhw iytjdG"
         placeholder="Insira os nomes dos participantes"
         type="text"
         value=""
       />
       <button
-        class="sc-egkSDF iDlEkV"
+        class="sc-egkSDF dqXYJH"
         disabled=""
         type="submit"
       >
         Adicionar
       </button>
     </form>
+    <div
+      class="sc-dntaoT hNNAQU"
+    >
+      <p>
+        Nenhum participante adicionado ...
+      </p>
+    </div>
     <footer
       class="sc-ixGGxD gZDtne"
     >
       <button
-        class="sc-kLhKbu fGqRoi"
+        class="sc-kLhKbu cWOiHb"
         data-testid="btnIniciar"
         disabled=""
       >

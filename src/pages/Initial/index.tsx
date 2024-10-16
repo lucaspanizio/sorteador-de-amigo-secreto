@@ -19,7 +19,7 @@ export const Initial = () => {
     <section>
       <h1>Vamos começar!</h1>
       <Form />
-      {attendees.length > 0 && <AttendeesList />}
+      <AttendeesList />
       <S.Footer>
         <S.Button
           data-testid="btnIniciar"
