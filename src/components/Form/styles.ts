@@ -7,13 +7,16 @@ export const Form = styled.form`
 export const Input = styled.input`
   border-top-left-radius: 45px;
   border-bottom-left-radius: 45px;
+  padding-right: 2rem;
   height: 82px;
-  width: 70%;
+  width: 80%;
   box-sizing: border-box;
   font-size: 20px;
   border: 2px solid black;
   margin-bottom: 1rem;
   box-shadow: 0px 2px 0px 1px #000000;
+
+  caret-color: #fe652b;
 
   padding-left: 80px;
   background-image: url('/images/adicionar-participante.png');
@@ -26,10 +29,7 @@ export const Input = styled.input`
   }
 
   @media screen and (max-width: 800px) {
-    width: 90%;
-    border-radius: 45px;
-    box-shadow: 0px 2px 0px 1px #000000;
-    margin-bottom: 18px;
+    width: 70%;
   }
 `;
 
@@ -37,7 +37,7 @@ export const Button = styled.button`
   border-top-right-radius: 45px;
   border-bottom-right-radius: 45px;
   height: 82px;
-  width: 30%;
+  width: 20%;
   box-sizing: border-box;
   border: 2px solid black;
   font-size: 20px;
@@ -56,11 +56,7 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 800px) {
-    display: block;
-    margin-top: 16px;
-    margin: 0 auto;
-    width: 220px;
-    border-radius: 45px;
+    width: 30%;
   }
 `;
 

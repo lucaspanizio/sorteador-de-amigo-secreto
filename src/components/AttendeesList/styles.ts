@@ -1,32 +1,53 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  border: 1px solid #ced4da;
-  border-radius: 20px;
   overflow: hidden;
-  padding-right: 2px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
   margin: 20px 0;
-  background-color: #f8f9fa;
+  min-height: 80px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 45px;
   box-shadow: 2px 2px 0px 1px #000000;
+
+  p {
+    align-self: center;
+    padding-left: 2.5rem;
+    font-size: 18px;
+    color: #c6c6c6;
+  }
 `;
 
 export const Container = styled.ul`
+  position: absolute;
+  border-radius: 45px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  max-height: 130px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 1.2rem 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  width: 95.5%;
+  height: 100%;
   gap: 0.75rem;
+  max-height: 52px;
+
+  @media screen and (max-width: 800px) {
+    position: relative;
+    max-height: 120px;
+  }
 
   &::-webkit-scrollbar {
     width: 6px;
   }
 
   &::-webkit-scrollbar-track {
-    right: 3rem;
     background: #f1f1f1;
     border-radius: 20px;
   }
@@ -44,7 +65,7 @@ export const Container = styled.ul`
 export const ListItem = styled.li`
   background-color: #ffffff;
   border: 1px solid #dee2e6;
-  border-radius: 10px;
+  border-radius: 45px;
   font-size: 18px;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s, transform 0.2s;
@@ -52,5 +73,6 @@ export const ListItem = styled.li`
   &:hover {
     background-color: #e2e6ea;
     transform: translateY(-3px);
+    border: 1px solid #fe652b;
   }
 `;
