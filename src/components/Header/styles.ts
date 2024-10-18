@@ -6,7 +6,6 @@ export const Header = styled.header`
   align-items: center;
 
   @media screen and (max-width: 800px) {
-    padding-top: 60px;
     flex-direction: column;
     align-items: center;
   }

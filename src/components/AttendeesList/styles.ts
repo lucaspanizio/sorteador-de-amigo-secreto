@@ -10,8 +10,9 @@ export const Wrapper = styled.div`
   margin: 20px 0;
   min-height: 80px;
   background-color: #fff;
-  border: 1px solid #000;
+
   border-radius: 45px;
+  border: 1px solid #000;
   box-shadow: 2px 2px 0px 1px #000000;
 
   p {
@@ -29,8 +30,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.ul`
-  position: absolute;
-  border-radius: 45px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -45,26 +44,7 @@ export const Container = styled.ul`
   max-height: 52px;
 
   @media screen and (max-width: 800px) {
-    position: relative;
     max-height: 120px;
-  }
-
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 20px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 20px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555;
   }
 `;
 
@@ -78,7 +58,7 @@ export const ListItem = styled.li`
 
   &:hover {
     background-color: #e2e6ea;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border: 1px solid #fe652b;
   }
 `;

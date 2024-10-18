@@ -73,9 +73,5 @@ export const Alert = styled.p`
   padding: 1rem;
   border: 1px solid #f5c2c7;
   border-radius: 8px;
-  margin-top: 2rem;
-
-  @media screen and (max-width: 800px) {
-    margin: 3rem 0;
-  }
+  margin-top: 1rem;
 `;
